@@ -1,0 +1,98 @@
+/* Reset básico de margens e box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Fundo da página e alinhamento central */
+body {
+    background-color: #0d1117; /* Cor escura baseada no design */
+    color: #e6edf3; /* Texto claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Container principal do Login */
+.login-wrapper {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    margin-bottom: 60px; /* Espaço entre o login e o footer */
+}
+
+/* Título */
+.login-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+/* Formulário e Inputs */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaçamento entre os campos */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #e6edf3;
+}
+
+.input-group input {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: #ffffff;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #58a6ff; /* Destaque azul ao focar no input */
+}
+
+/* Botão Verde */
+.btn-login {
+    background-color: #238636;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #2ea043;
+}
+
+
+/* Rodapé */
+.site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 13px;
+    color: #7d8590; /* Cinza mais sutil para o copyright */
+}
