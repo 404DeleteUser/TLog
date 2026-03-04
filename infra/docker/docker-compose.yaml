@@ -1,0 +1,50 @@
+
+# Seção onde declaramos os serviços (containers)
+services:
+
+  # Nome do serviço (pode ser qualquer nome, aqui chamamos de "db")
+  db:
+
+    # Imagem que será usada para criar o container
+    # postgres:alpine = PostgreSQL versão leve baseada em Alpine Linux
+    image: postgres:18.3-alpine3.23
+
+    # Nome personalizado do container (ao invés de nome automático)
+    container_name: banco_demandas
+
+    # Faz o container reiniciar automaticamente
+    # Se der erro ou reiniciar o PC, ele sobe sozinho
+    restart: always
+
+    # Variáveis de ambiente usadas para configurar o PostgreSQL na inicialização
+    environment:
+
+      # Cria automaticamente um usuário no PostgreSQL
+      POSTGRES_USER: ${POSTGRES_USER}
+
+      # Define a senha desse usuário
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+      # Cria automaticamente um banco de dados com esse nome
+      POSTGRES_DB: ${POSTGRES_DB}
+
+    # Mapeamento de portas
+    ports:
+
+      # Formato: "PORTA_DO_PC:PORTA_DO_CONTAINER"
+      # Aqui estamos conectando a porta 5432 do seu computador
+      # com a porta 5432 do PostgreSQL dentro do container
+      - "${POSGRES_PORT}:5432"
+
+    # Define volumes (armazenamento persistente)
+    volumes:
+
+      # Conecta o volume chamado "pgdata"
+      # à pasta onde o PostgreSQL salva os dados internamente
+      # Isso evita perder os dados ao remover o container
+      - pgdata:/var/lib/postgresql/data
+
+# Declaração oficial do volume chamado pgdata
+# O Docker cria automaticamente se não existir
+volumes:
+  pgdata:
