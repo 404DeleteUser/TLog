@@ -1,1 +1,2 @@
-keepgit
+node_modules
+.env
