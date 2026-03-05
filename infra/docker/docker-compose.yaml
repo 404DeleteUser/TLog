@@ -34,7 +34,7 @@ services:
       # Formato: "PORTA_DO_PC:PORTA_DO_CONTAINER"
       # Aqui estamos conectando a porta 5432 do seu computador
       # com a porta 5432 do PostgreSQL dentro do container
-      - "${POSGRES_PORT}:5432"
+      - "${POSTGRES_PORT}:5432"
 
     # Define volumes (armazenamento persistente)
     volumes:
