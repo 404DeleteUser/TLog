@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Trilha de Demandas</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/index.css" />
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container">
+                <img src="../assets/logo.png" alt="Logo" class="logo-img">
+            </div>
+            
+            <a href="#" class="btn-trilha">Trilha</a>
+            <button class="btn-add" id="btnNovaDemanda">+</button>
+        </div>
+
+        <div class="nav-right">
+            <div class="user-profile">
+                <img src="../assets/iconUser.png" alt="Perfil">
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="mes-titulo">Fevereiro</h1>
+
+        <div class="dia-grupo">
+            <h2 class="dia-titulo">Dia 15</h2>
+            
+            <div class="timeline">
+                <div class="demanda-item">
+                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
+                    <div class="demanda-header">
+                        <span class="demanda-user">Giovanni</span>
+                        <span class="tag tag-monitoramento">monitoramento</span>
+                        <span class="demanda-tempo">18:12 p.m</span>
+                    </div>
+                    <div class="demanda-assunto">Gmail: recadastramento</div>
+                </div>
+
+                <div class="demanda-item">
+                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
+                    <div class="demanda-header">
+                        <span class="demanda-user">Isabelly</span>
+                        <span class="tag tag-monitoramento">monitoramento</span>
+                        <span class="demanda-tempo">17:55 p.m</span>
+                    </div>
+                    <div class="demanda-assunto">Sigadoc: Termo</div>
+                </div>
+
+                <div class="demanda-item">
+                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
+                    <div class="demanda-header">
+                        <span class="demanda-user">Davi</span>
+                        <span class="tag tag-impacto">impacto</span>
+                        <span class="demanda-tempo">17:02 p.m</span>
+                    </div>
+                    <div class="demanda-assunto">Chamado: planilha</div>
+                </div>
+
+                <div class="demanda-item">
+                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
+                    <div class="demanda-header">
+                        <span class="demanda-user">Dinalva</span>
+                        <span class="tag tag-assiduidade">assiduidade</span>
+                        <span class="demanda-tempo">16:53 p.m</span>
+                    </div>
+                    <div class="demanda-assunto">Sigpas: justificativa</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dia-grupo">
+            <h2 class="dia-titulo">Dia 14</h2>
+            
+            <div class="timeline">
+                <div class="demanda-item">
+                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
+                    <div class="demanda-header">
+                        <span class="demanda-user">Isabelly</span>
+                        <span class="tag tag-monitoramento">monitoramento</span>
+                        <span class="demanda-tempo">08:12 a.m</span>
+                    </div>
+                    <div class="demanda-assunto">Sigadoc: comunicação interna</div>
+                </div>
+
+                <div class="demanda-item">
+                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
+                    <div class="demanda-header">
+                        <span class="demanda-user">Giovanni</span>
+                        <span class="tag tag-monitoramento">monitoramento</span>
+                        <span class="demanda-tempo">07:45 a.m</span>
+                    </div>
+                    <div class="demanda-assunto">Gmail: recadastramento</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <a class="footer-link footer-copyright" href="#">© 2026 Coodenadoria de Monitoramento de Pessoal</a>
+        <nav class="footer-links">
+        <!--    <a class="footer-link" href="#">Contato</a>
+            <a class="footer-link" href="#">Termos de Uso</a>
+            <a class="footer-link" href="#">Suporte</a> -->
+        </nav>
+    </footer>
+    
+    <div id="modalDemanda" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2 class="modal-titulo">Nova Demanda</h2>
+            
+            <form id="formDemanda">
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="" disabled selected>Selecione uma categoria...</option>
+                        <option value="Email">Email</option>
+                        <option value="SigPas">SigPas</option>
+                        <option value="Processo">Processo</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição (Assunto)</label>
+                    <input type="text" id="descricao" name="descricao" maxlength="150" required placeholder="Ex: Recadastramento de conta">
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="btnCancelarModal" class="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn-salvar">Salvar Demanda</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/index.js"></script>
+</body>
+</html>
