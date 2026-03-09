@@ -6,7 +6,6 @@
     <title>Trilha de Demandas</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="../css/index.css" />
 </head>
 <body>
@@ -28,104 +27,36 @@
         </div>
     </nav>
 
-    <main class="container">
-        <h1 class="mes-titulo">Fevereiro</h1>
-
-        <div class="dia-grupo">
-            <h2 class="dia-titulo">Dia 15</h2>
-            
-            <div class="timeline">
-                <div class="demanda-item">
-                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
-                    <div class="demanda-header">
-                        <span class="demanda-user">Giovanni</span>
-                        <span class="tag tag-monitoramento">monitoramento</span>
-                        <span class="demanda-tempo">18:12 p.m</span>
-                    </div>
-                    <div class="demanda-assunto">Gmail: recadastramento</div>
-                </div>
-
-                <div class="demanda-item">
-                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
-                    <div class="demanda-header">
-                        <span class="demanda-user">Isabelly</span>
-                        <span class="tag tag-monitoramento">monitoramento</span>
-                        <span class="demanda-tempo">17:55 p.m</span>
-                    </div>
-                    <div class="demanda-assunto">Sigadoc: Termo</div>
-                </div>
-
-                <div class="demanda-item">
-                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
-                    <div class="demanda-header">
-                        <span class="demanda-user">Davi</span>
-                        <span class="tag tag-impacto">impacto</span>
-                        <span class="demanda-tempo">17:02 p.m</span>
-                    </div>
-                    <div class="demanda-assunto">Chamado: planilha</div>
-                </div>
-
-                <div class="demanda-item">
-                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
-                    <div class="demanda-header">
-                        <span class="demanda-user">Dinalva</span>
-                        <span class="tag tag-assiduidade">assiduidade</span>
-                        <span class="demanda-tempo">16:53 p.m</span>
-                    </div>
-                    <div class="demanda-assunto">Sigpas: justificativa</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="dia-grupo">
-            <h2 class="dia-titulo">Dia 14</h2>
-            
-            <div class="timeline">
-                <div class="demanda-item">
-                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
-                    <div class="demanda-header">
-                        <span class="demanda-user">Isabelly</span>
-                        <span class="tag tag-monitoramento">monitoramento</span>
-                        <span class="demanda-tempo">08:12 a.m</span>
-                    </div>
-                    <div class="demanda-assunto">Sigadoc: comunicação interna</div>
-                </div>
-
-                <div class="demanda-item">
-                    <div class="demanda-avatar"><img src="../assets/iconUser.png" alt="Usuário"></div>
-                    <div class="demanda-header">
-                        <span class="demanda-user">Giovanni</span>
-                        <span class="tag tag-monitoramento">monitoramento</span>
-                        <span class="demanda-tempo">07:45 a.m</span>
-                    </div>
-                    <div class="demanda-assunto">Gmail: recadastramento</div>
-                </div>
-            </div>
-        </div>
+    <main class="container" id="muralContainer">
+        <p style="color: #8b949e; padding-left: 20px;">A carregar demandas...</p>
     </main>
 
     <footer class="footer-container">
-        <a class="footer-link footer-copyright" href="#">© 2026 Coodenadoria de Monitoramento de Pessoal</a>
-        <nav class="footer-links">
-        <!--    <a class="footer-link" href="#">Contato</a>
-            <a class="footer-link" href="#">Termos de Uso</a>
-            <a class="footer-link" href="#">Suporte</a> -->
-        </nav>
+        <a class="footer-link footer-copyright" href="#">© 2026 Coordenadoria de Monitoramento de Pessoal</a>
     </footer>
     
     <div id="modalDemanda" class="modal-overlay hidden">
         <div class="modal-content">
-            <h2 class="modal-titulo">Nova Demanda</h2>
+            <h2 class="modal-titulo">Novo Registro</h2>
             
             <form id="formDemanda">
                 <div class="form-group">
-                    <label for="categoria">Categoria</label>
-                    <select id="categoria" name="categoria" required>
-                        <option value="" disabled selected>Selecione uma categoria...</option>
-                        <option value="Email">Email</option>
-                        <option value="SigPas">SigPas</option>
-                        <option value="Processo">Processo</option>
-                    </select>
+                    <label>Categoria</label>
+                    
+                    <input type="hidden" id="categoria" name="categoria" required>
+
+                    <div class="custom-select" id="customSelect">
+                        <div class="select-trigger" id="selectTrigger">
+                            <span>Selecione uma categoria...</span>
+                            <img class="setinha" src="../assets/arrow-down.png" alt="">
+                        </div>
+                        
+                        <div class="select-options hidden" id="selectOptions">
+                            <div class="option" data-value="Email">Email</div>
+                            <div class="option" data-value="SigPas">SigPas</div>
+                            <div class="option" data-value="Processo">Processo</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
