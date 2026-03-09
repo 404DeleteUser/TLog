@@ -7,7 +7,7 @@ document.querySelector('.login-form').addEventListener('submit', async (event) =
 
     try {
         // Envia os dados para o nosso backend Node.js
-        const resposta = await fetch('http://localhost:3000/api/login', {
+        const resposta = await fetch('/api/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: email, senha: senha })
@@ -20,7 +20,7 @@ document.querySelector('.login-form').addEventListener('submit', async (event) =
             //usamos o JSON.stringfy para transformar o objeto em texto, pois o localStorage só aceita texto
             localStorage.setItem('usuarioLogado', JSON.stringify(retorno.dados));
 
-            window.location.href = 'index.html'
+            window.location.href = '/app';
             // Aqui salvaríamos os dados no navegador e mandaríamos para a tela da Trilha
         } else {
             alert(retorno.erro);
